@@ -1,5 +1,13 @@
 # Ensek
 
+## Running the application
+I have provided a docker compose file which should spin up a full working environment, assuming one has docker installed. If not, this is a standard minimal API dotnet application, with a Postgres RDBMS. to run the application, use the `dotnet run` command.
+
+Example executing the application from the root directory
+```dotnetcli
+ dotnet run --project ./src/App/app.csproj
+```
+
 ## Approach
 
 Because this project required importing a file of unknown size, I would preferably have liked to use message queues but was convinced the development of this kind of solution would take more time than I had available for the test. As it stands, I have taken a pseudo DDD approach, using MediatR to implement in-memory event notification, and EFCore as a preferred ORM.
